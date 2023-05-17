@@ -1,0 +1,72 @@
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #121b74;
+}
+
+.eye {
+  width: 10em;
+  height: 10em;
+  background: #2d2d2d;
+  border-radius: 100% 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow:
+          .4em .2em .7em .3em rgba(255, 255, 255, .1),
+          -.4em -.2em .7em .3em rgba(255, 255, 255, .1);
+  transform: scaleY(1) rotate(45deg);
+  animation: eye ease-in-out 1.6s infinite;
+
+  &__ball {
+    width: 6.5em;
+    height: 6.5em;
+    border-radius: 50%;
+    background-image: radial-gradient(circle at center, #1F6ED4 1.2em, #fff 1.3em);
+    animation: ball ease-in-out 5s infinite;
+  }
+}
+
+@keyframes eye {
+  20% {
+    transform: scaleY(1) rotate(45deg);
+  }
+  40% {
+    transform: scaleY(0) rotate(45deg);
+  }
+  70% {
+    transform: scaleY(1) rotate(45deg);
+  }
+}
+@keyframes ball {
+  18% {
+    transform: translate(0, 0);
+  }
+  28% {
+    transform: translate(-1em, 1em);
+  }
+  45% {
+    transform: translate(0, 0);
+  }
+  49% {
+    transform: translate(0, 0);
+  }
+  62% {
+    transform: translate(1.7em, -.4em);
+  }
+  80% {
+    transform: translate(0, 0);
+  }
+}
